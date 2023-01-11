@@ -1,0 +1,145 @@
+<mat-toolbar class="d-flex">
+  <div class="w-25">
+    <button
+      class="btn-dialog-close"
+      mat-button
+      tabIndex="-1"
+      (click)="onClose()"
+    >
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+  <div class="w-50 text-center">
+    <span class="fill-remaining-space">
+      <mat-icon>remove_red_eye</mat-icon> Preview</span
+    >
+  </div>
+</mat-toolbar>
+
+
+<div class="card" style="width: 100%">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <span class="topic1">Template Name</span>
+      <p class="details mt-2">Description Details..............</p>
+    </li>
+  </ul>
+</div>
+<mat-tab-group>
+  <mat-tab [label]="tab" *ngFor="let tab of lotsOfTabs; index as i">
+    <div class="card" style="width: 100%">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <span class="topic">Qustion {{ i }}?</span>
+          <p>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <textarea matInput placeholder="Type your Answer Here"></textarea>
+            </mat-form-field>
+          </p>
+
+         <div class="w-100 text-right mt-3">
+          <button mat-icon-btn class="bg-transparent text-info ">
+            <mat-icon>note_alt</mat-icon> Nots
+          </button>
+          <button mat-icon-btn class="bg-transparent text-danger ">
+            <mat-icon>perm_media</mat-icon>Media
+          </button>
+          <button mat-icon-btn class="bg-transparent text-warning">
+            <mat-icon>filter_1</mat-icon>Action
+          </button>
+         </div>
+        </li>
+        <li class="list-group-item">
+          <span class="topic">Qustion {{ i }}?</span>
+          <p class="mt-3">
+            <button  class="example-full-width border btn btn-outline-success">Yes</button>
+
+          </p>
+          <p>
+            <button  class="example-full-width border btn btn-outline-danger">No</button>
+
+          </p>
+          <p>
+            <button type="button" class=" border example-full-width btn btn-outline-secondary">N/A</button>
+
+          </p>
+         <div class="w-100 text-right">
+          <button mat-icon-btn class="bg-transparent text-success ">
+            <mat-icon>note_alt</mat-icon> Nots
+          </button>
+          <button mat-icon-btn class="bg-transparent text-danger ">
+            <mat-icon>perm_media</mat-icon>Media
+          </button>
+          <button mat-icon-btn class="bg-transparent text-warning">
+            <mat-icon>filter_1</mat-icon>Action
+          </button>
+         </div>
+        </li>
+        <li class="list-group-item p-1">
+
+
+          <mat-accordion>
+            <mat-expansion-panel  expanded="0"
+            opened="true">
+              <mat-expansion-panel-header class="mb-2">
+                <mat-panel-title>
+                 Section Name
+                </mat-panel-title>
+
+              </mat-expansion-panel-header>
+              <span class="topic">Qustion {{ i }}?</span>
+          <p>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input matInput placeholder="Type your Answer Here">
+            </mat-form-field>
+
+          </p>
+
+         <div class="w-100 text-right">
+          <button mat-icon-btn class="bg-transparent text-success ">
+            <mat-icon>note_alt</mat-icon> Nots
+          </button>
+          <button mat-icon-btn class="bg-transparent text-danger ">
+            <mat-icon>perm_media</mat-icon>Media
+          </button>
+          <button mat-icon-btn class="bg-transparent text-warning">
+            <mat-icon>filter_1</mat-icon>Action
+          </button>
+         </div>
+            </mat-expansion-panel>
+
+          </mat-accordion>
+
+        </li>
+
+        <li class="list-group-item">
+          <span class="topic">Qustion {{ i }}?</span>
+          <p>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input matInput placeholder="Type your Answer Here">
+            </mat-form-field>
+
+          </p>
+
+         <div class="w-100 text-right">
+          <button mat-icon-btn class="bg-transparent text-success ">
+            <mat-icon>note_alt</mat-icon> Nots
+          </button>
+          <button mat-icon-btn class="bg-transparent text-danger ">
+            <mat-icon>perm_media</mat-icon>Media
+          </button>
+          <button mat-icon-btn class="bg-transparent text-warning">
+            <mat-icon>filter_1</mat-icon>Action
+          </button>
+         </div>
+        </li>
+      </ul>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+<div class="button-row w-100 text-center">
+  <button mat-raised-button class="btn-success w-50" type="submit">
+    Submit
+  </button>
+</div>

@@ -1,0 +1,29 @@
+.submit{
+  color:#fff;
+  width: 100px;
+}
+mat-toolbar{
+
+  color:#fff;
+}
+.text-center mat-icon{
+  vertical-align: sub;
+}
+
+.topic{
+  color: var(--cr2-color);
+  font-size: 20px;
+  font-weight: 700;
+}
+mat-icon-btn:hover{
+  cursor: pointer;
+}
+.details{
+  color: #a2a2a2;
+  font-size: 16px;
+  font-weight: 500;
+}
+.list-group-item {
+
+  padding: 3rem 1.25rem !important;
+}

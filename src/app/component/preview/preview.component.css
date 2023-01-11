@@ -1,0 +1,43 @@
+.submit{
+  color:#fff;
+  width: 100px;
+}
+.yes{
+color:greenyellow;
+border: greenyellow;
+background-color: transparent;
+}
+mat-toolbar{
+background-color: var(--cr2-color);
+  color:#fff;
+}
+mat-form-field{
+  margin-top: 25px !important;
+}
+
+.text-center mat-icon{
+  vertical-align: sub;
+}
+.topic{
+  color: var(--cr2-color);
+  font-size: 15px;
+  font-weight: 700;
+}
+.topic1{
+  color: var(--cr2-color);
+  font-size: 18px;
+  font-weight: 700;
+}
+mat-icon-btn:hover{
+  cursor: pointer;
+}
+.details{
+  color: #a2a2a2;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+.list-group-item mat-icon{
+  vertical-align: middle;
+}

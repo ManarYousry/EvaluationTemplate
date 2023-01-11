@@ -1,0 +1,202 @@
+<!--  ------main----------------- -->
+<mat-card class="example-card" style="padding-bottom: 30px !important">
+  <div class="caption"><span>Template Form</span></div>
+  <form
+    [formGroup]="dataser.myForm"
+    novalidate
+    (ngSubmit)="save(dataser.myForm)"
+  >
+    <div class="TemplateImage mt-5">
+      <div
+        class="card mx-auto border-0 bg-transparent"
+        style="align-items: center"
+      >
+
+        <div class="imgBox">
+          <div>
+            <img [src]="preview" class="preview ">
+          </div>
+        <div class="overlay" >
+          <label id="myDiv" for="file">
+            <mat-icon>add</mat-icon>
+          </label>
+
+          <input
+            type="file"
+            name="file"
+            id="file"
+            formControlName="templateImg"
+
+            ng-model="theFile"
+            (change)="onchange($event)"
+          />
+        </div>
+        </div>
+
+        <div class="card-body w-50">
+          <h3 class="card-title">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>TEMPLATE NAME</mat-label>
+              <input
+                matInput
+                placeholder="Type here..."
+                formControlName="templateName"
+              />
+              <mat-icon matSuffix>mode_edit</mat-icon>
+            </mat-form-field>
+          </h3>
+          <p class="card-text">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Add Description</mat-label>
+              <input
+                matInput
+                placeholder="Type here..."
+                formControlName="templateDesc"
+              />
+
+              <mat-icon matSuffix>mode_edit</mat-icon>
+            </mat-form-field>
+          </p>
+        </div>
+      </div>
+
+      <button
+        mat-button
+        type="button"
+        class="new font-weight-bolder"
+        (click)="AddPage()"
+      >
+        <mat-icon>add</mat-icon>
+        Add Page
+      </button>
+    </div>
+
+    <div class="mt-5">
+      <mat-accordion formArrayName="templateDetails">
+        <!-- <mat-expansion-panel expanded="0" opened="true"  *ngFor="let item of items; index as i" > -->
+        <mat-expansion-panel
+          expanded="0"
+          opened="true"
+          *ngFor="let page of templateDetails; let i = index"
+          [formGroupName]="i"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+
+              <mat-form-field appearance="outline" class="w-50" *ngIf="show">
+                <mat-label>Page Title</mat-label>
+
+                <input
+                  matInput
+                  placeholder="Type here..."
+                  (click)="typetitle($event)"
+                  formControlName="pageName"
+                />
+
+
+              </mat-form-field>
+           <span>  <span *ngIf="!show" (click)="$event.stopPropagation()"> {{ TitlePage }}</span> <mat-icon (click)="toggle($event)">edit</mat-icon></span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <!-- -----------------------------------table of question------------------------------------------------- -->
+
+          <div class="example-container mat-elevation-z8 mt-5">
+            <!-- -----------------------------Treetable------------------------- -->
+             <!-- <p-treeTable    [columns]="cols"  [value]="tableData" formArrayName="Questions"> -->
+              <p-treeTable    [columns]="cols"  [value]="tableData"  formArrayName="Questions">
+              <!-- <ng-template pTemplate="colgroup" let-columns>
+                <colgroup>
+                  <col *ngFor= "let col of columns"/>
+                </colgroup>
+              </ng-template> -->
+              <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+
+              <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns"
+              *ngFor="let q of Questions(i); let j = index" [formArrayName]="j">
+              <!-- row -->
+                <tr >
+                   <!-- cell -->
+                  <td *ngFor="let col of columns; let i = index" ttEditableColumn [ngClass]="{'p-toggler-column': i === 0}">
+                    <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0">
+                    </p-treeTableToggler>
+
+                    <p-treeTableCellEditor>
+                      <ng-template pTemplate="input">
+                        <input pInputText type="text" formControlName="quest"
+                        [(ngModel)]="rowData[col.field]"
+                        >
+
+                      </ng-template>
+
+                      <ng-template pTemplate="output">
+                        {{rowData[col.field]}}
+                      </ng-template>
+                    </p-treeTableCellEditor>
+
+                 <!-- /cell -->
+                  </td>
+                  <td *ngFor="let col of columns; let i = index" ttEditableColumn>
+
+                    <p-treeTableCellEditor>
+
+                      <p-dropdown [options]="ResponseType" [(ngModel)]="selectedCity3" formControlName="responseType"
+                      placeholder="Select a response" [group]="true" >
+                        <ng-template let-group pTemplate="group">
+                          <div class="p-d-flex p-ai-center">
+                            <span>{{group.label}}</span>
+                          </div>
+                        </ng-template>
+                      </p-dropdown>
+                    </p-treeTableCellEditor>
+
+                 <!-- /cell -->
+                  </td>
+
+
+
+
+              <!-- /row -->
+                </tr>
+
+
+              </ng-template>
+            </p-treeTable>
+
+
+            <!-- ---------------------------------/End Treetable-----------=------------------------------------ -->
+
+</div>
+          <!-- -----------------------------------/table of question------------------------------------------------- -->
+
+          <!-- <div class="my-5" *ngIf="i>0"> -->
+          <div class="my-5" *ngIf="templateDetails.length > 1">
+            <button
+              mat-button
+              class="del float-right font-weight-bolder"
+              type="button"
+              (click)="DeletePage(i)"
+            >
+              <mat-icon>clear</mat-icon>
+              Remove Page
+            </button>
+          </div>
+        </mat-expansion-panel>
+
+        <div class="w-100 text-center mt-5">
+          <button mat-raised-button class="w-25 text-white btn-success" type="submit">
+            Submit
+          </button>
+        </div>
+      </mat-accordion>
+    </div>
+  </form>
+</mat-card>
+
+<!-- ---------------------form--------------------------- -->

@@ -1,0 +1,60 @@
+<mat-toolbar>
+  <div class="brand text-center" style="width: 240px;">
+    <a routerLink="#">
+      <span class="brandTitle">Company Logo </span>
+    </a>
+  </div>
+
+  <div class="">
+    <button
+      class="my-1 bg-transparent"
+      mat-icon-button
+      (click)="onToggleSidenav()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+
+  <div fxFlex fxLayout fxLayoutAlign="end">
+    <ul fxLayout fxLayoutGap="3px" class="navigation.items">
+      <li>
+        <button
+          mat-icon-button matTooltip="fullscreen"
+          class="matero-toolbar-button"
+          fxHide.lt-sm
+          (click)="toggleFullscreen()"
+        >
+          <mat-icon>fullscreen</mat-icon>
+        </button>
+      </li>
+      <li>
+        <button mat-icon-button matTooltip="notifications ">
+          <mat-icon>notifications</mat-icon>
+        </button>
+      </li>
+
+      <li>
+        <button mat-icon-button matTooltip="history ">
+          <mat-icon>history</mat-icon>
+        </button>
+      </li>
+      <li>
+        <button mat-icon-button matTooltip="settings">
+          <mat-icon>settings</mat-icon>
+        </button>
+      </li>
+      <li>
+        <button mat-icon-button>
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <span> UserName </span>
+      </li>
+
+      <li>
+        <button mat-icon-button (click)="logOut()" matTooltip="Logout ">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>

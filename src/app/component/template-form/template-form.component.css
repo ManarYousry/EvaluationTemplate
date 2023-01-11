@@ -1,0 +1,172 @@
+.uplodedImg{
+  width: 156px;
+  height: 156px;
+  padding: px;
+  margin-bottom: 10px;
+  border: 2px dashed #cbd1d3;
+  margin-right: 10px;
+}
+.mat-card-header .mat-card-title {
+  margin-bottom: 20px !important;}
+.subtitle{
+  display: block;
+  margin: 5px;
+  color: var(--cr4-color);
+  font-weight: bolder;
+}
+mat-divider{
+  box-shadow: none;
+}
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 30px;
+}
+.example-margin {
+  margin: 0 10px;
+}
+#file
+{
+  display: none;
+}
+.imgBox
+{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+
+  border: 2px dashed #eee;
+  box-shadow: 2px 2px 4px grey ;
+  /* background-image: url(../../../assets/image/upload.jpg); */
+  background-repeat: no-repeat;
+  background-size:60% 60%;
+  background-position: center;
+}
+.preview{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(147, 147, 147, 0.493);
+  border: 2px dashed #eee;
+  opacity: 0;
+  transition: all .4s ease-in-out;
+
+}
+.imgBox:hover .overlay
+{
+  cursor: pointer;
+opacity: 1;
+}
+
+#myDiv{
+
+  border: 2px solid #eee;
+  box-shadow: 2px 2px 4px grey ;
+  color: var(--cr2-color);
+  background-color: #fff;
+  position: absolute;
+  top: 44%;
+  right: 42%;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+}
+
+
+
+.student-element-detail{
+  width: 100%;
+  }
+  .student-detail-row {
+  min-height: 0;
+
+  }
+  .student-detail-row mat-cell
+  {
+  background: #ffffff;
+    box-shadow: inset 3px 0px 5px var(--third-color),inset -3px 0px 5px var(--third-color);
+
+
+  }
+  .add{
+    position: absolute;
+
+    left:-3px;
+
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--cr2-color);
+    text-shadow: 1px 1.2px 2px #a2a2a2;
+  }
+  mat-cell, mat-header-cell,mat-header-cell{
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 20%  !important;
+    width: 20%  !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+   }
+
+  mat-cell:nth-child(3), mat-header-cell:nth-child(3){
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 15%  !important;
+    width: 15%  !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+   }
+   mat-cell:nth-child(4), mat-header-cell:nth-child(4),
+   mat-cell:nth-child(2), mat-header-cell:nth-child(2){
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 30%  !important;
+    width: 30%  !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+   }
+   mat-cell:nth-child(5), mat-header-cell:nth-child(5){
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 5%  !important;
+    width: 5%  !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+   }
+.custom-width{
+  width: 30%;
+}

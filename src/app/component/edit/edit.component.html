@@ -1,0 +1,44 @@
+<mat-toolbar class="bg-success d-flex">
+
+  <div class="w-25">
+    <button  class="btn-dialog-close" mat-button  tabIndex="-1" (click)="onClose()"><mat-icon>clear</mat-icon></button>
+  </div>
+  <div class="w-50 text-center">
+  <span class="fill-remaining-space">   <mat-icon>edit</mat-icon> Edit</span>
+  </div>
+
+</mat-toolbar>
+
+
+
+
+<div class="card" style="width:100%">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <span class="topic">Template</span>
+      <button mat-icon-btn class="bg-transparent text-success float-right" (click)="editTemplate()"> <mat-icon>edit</mat-icon></button>
+      <p class="details">1 page add 5 Questions</p>
+
+  </li>
+  <li class="list-group-item">
+    <span class="topic">Report</span>
+    <button mat-icon-btn class="bg-transparent text-success float-right"> <mat-icon>edit</mat-icon></button>
+    <p class="details">Design hoe th inspection report will look </p>
+
+</li>
+<li class="list-group-item">
+  <span class="topic">Access</span>
+  <button mat-icon-btn class="bg-transparent text-success float-right"> <mat-icon>edit</mat-icon></button>
+  <p class="details">All users (Macdonalds)</p>
+
+</li>
+<li class="list-group-item">
+  <span class="topic">Schedule</span>
+  <button mat-icon-btn class="bg-transparent text-success float-right"> <mat-icon>edit</mat-icon></button>
+  <p class="details">Not schedule</p>
+
+</li>
+  </ul>
+</div>
+
+
